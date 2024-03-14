@@ -22,10 +22,24 @@ const userSchema = new Schema({
         minLength: 10,
         unique: true
     },
+    mobileNo: {
+        type: Number,
+        required: true,
+        min: 10,
+        unique: true
+    },
     userType: {
         type: String,
         default: "CUSTOMER",
         enum: ["CUSTOMER", "ADMIN"]
+    },
+    referralCode: {
+        type: String,
+        unique: true
+    },
+    referralCount: {
+        type: Number,
+        default: 0
     }
 }, { timestamps: true })
 

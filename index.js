@@ -15,7 +15,7 @@ app.use(express.json());
 
 // Routes
 app.use('/compass/api/v1/auth', authRoutes);
-app.use('/compass/api/v1/auth', authRoutes)
+// app.use('/compass/api/v1/auth', authRoutes)
 
 // Start the server
 app.listen(PORT, () => {

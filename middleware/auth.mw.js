@@ -2,7 +2,7 @@ const userModel = require('../models/user.model')
 
 
 const verifySignupBody = async (req, res, next) => {
-    const { name, userId, password, email } = req.body
+    const { name, userId, password, email, mobileNo } = req.body
     try {
 
         // check if Name is present 
@@ -29,6 +29,13 @@ const verifySignupBody = async (req, res, next) => {
                 message: "Failed ! Password was not provied in request body"
             })
         }
+
+        //Phone check
+        if (!mobileNo) {
+            return res.status(400).send({
+                message: "Failed ! Mobile Number was not provied in request body"
+            })
+        }
         //check if user is already present
 
         let user = await userModel.findOne({ userId })
@@ -37,6 +44,21 @@ const verifySignupBody = async (req, res, next) => {
                 message: "Failed ! user with same userId is already present"
             })
         }
+
+        let existingMail = await userModel.findOne({ email })
+        if (existingMail) {
+            return res.status(400).send({
+                message: "Failed ! user with same Email is already present"
+            })
+        }
+
+        let existingMobileNo = await userModel.findOne({ mobileNo })
+        if (existingMobileNo) {
+            return res.status(400).send({
+                message: "Failed ! user with same Mobile Number is already present"
+            })
+        }
+
         next()
 
     } catch (err) {
