@@ -5,7 +5,7 @@ const Product = require('../models/product.model');
 // Controller method to add a new product
 exports.addProduct = async (req, res) => {
     try {
-        const { name, description, type, price, startDate, endDate, duration } = req.body;
+        const { name, description, type, price, startDate, endDate, duration, imageUrl } = req.body;
         const parsedStartDate = startDate ? new Date(startDate) : null;
         const parsedEndDate = endDate ? new Date(endDate) : null;
         // Create a new product instance
@@ -16,7 +16,8 @@ exports.addProduct = async (req, res) => {
             price,
             startDate: parsedStartDate,
             endDate: parsedEndDate,
-            duration
+            duration,
+            imageUrl
         });
 
         // Save the product to the database

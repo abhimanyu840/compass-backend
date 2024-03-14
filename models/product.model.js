@@ -22,21 +22,25 @@ const productSchema = new mongoose.Schema({
     },
     startDate: {
         type: Date,
-        required: function() {
+        required: function () {
             return this.type === 'event';
         }
     },
     endDate: {
         type: Date,
-        required: function() {
+        required: function () {
             return this.type === 'event';
         }
     },
     duration: {
         type: Number,
-        required: function() {
+        required: function () {
             return this.type === 'course';
         }
+    },
+    imageUrl: {
+        type: String,
+        required: true
     },
     createdAt: {
         type: Date,
