@@ -87,10 +87,6 @@ const verifySignInBody = async (req, res, next) => {
     next()
 }
 
-const adminAuthMiddleware = (req, res, next) => {
-
-}
-
 const verifyToken = (req, res, next) => {
     //Check if the token is present in the header
     const token = req.headers['x-access-token']
