@@ -14,8 +14,8 @@ const { verifyToken, isAdmin } = require("../middleware/auth.mw")
 // Routes for managing digital products
 router.post('/products/add', [verifyToken, isAdmin], productController.addProduct);
 router.get('/products/:id', [verifyToken, isAdmin], productController.getProduct);
-router.put('/products/:id/update', [verifyToken, isAdmin], productController.updateProduct);
-router.delete('/products/:id/delete', [verifyToken, isAdmin], productController.deleteProduct);
+router.put('/products/update/:id', [verifyToken, isAdmin], productController.updateProduct);
+router.delete('/products/delete/:id', [verifyToken, isAdmin], productController.deleteProduct);
 
 // Endpoints for fetching sales data
 router.get('/sales/daily', [verifyToken, isAdmin], salesController.getDailySales);
