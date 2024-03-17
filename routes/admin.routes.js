@@ -23,10 +23,10 @@ router.get('/sales/weekly', [verifyToken, isAdmin], salesController.getWeeklySal
 router.get('/sales/monthly', [verifyToken, isAdmin], salesController.getMonthlySales);
 router.get('/sales/custom', [verifyToken, isAdmin], salesController.getCustomSales);
 
-// Endpoints for managing orders
-router.get('/orders', [verifyToken, isAdmin], orderController.getAllOrders);
-router.get('/orders/:id', [verifyToken, isAdmin], orderController.getOrder);
-router.put('/orders/:id/update', [verifyToken, isAdmin], orderController.updateOrder);
-router.delete('/orders/:id/delete', [verifyToken, isAdmin], orderController.deleteOrder);
+// // Endpoints for managing orders
+// router.get('/orders', [verifyToken, isAdmin], orderController.getAllOrders);
+// router.get('/orders/:id', [verifyToken, isAdmin], orderController.getOrder);
+// router.put('/orders/:id/update', [verifyToken, isAdmin], orderController.updateOrder);
+// router.delete('/orders/:id/delete', [verifyToken, isAdmin], orderController.deleteOrder);
 
 module.exports = router;

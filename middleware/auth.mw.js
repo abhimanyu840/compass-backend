@@ -131,4 +131,5 @@ const isAdmin = (req, res, next) => {
     }
 }
 
+
 module.exports = { verifySignupBody, verifySignInBody, verifyToken, isAdmin }

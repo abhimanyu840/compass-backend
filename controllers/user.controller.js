@@ -25,3 +25,19 @@ exports.generateReferralLink = async (req, res) => {
         res.status(500).json({ message: 'Failed to generate referral link' });
     }
 };
+
+exports.fetchProfile = async(req,res)=>{
+    try {
+        // Retrieve user profile from database
+        const user = await User.findById(req.user.id).select('-password'); // Assuming you store user ID in req.user.id after authentication
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+        
+        // Return user profile as response
+        res.json(user);
+    } catch (err) {
+        console.error('Error fetching user profile:', err);
+        res.status(500).json({ message: 'Server Error' });
+    }
+}
