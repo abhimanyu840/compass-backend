@@ -41,9 +41,9 @@ const adminInit = async () => {
 
     try {
         user = await user_model.create({
-            name: "Abhimanyu",
+            name: "Investment Compass",
             userId: "admin",
-            email: "akabhimanyukumar111@gmail.com",
+            email: "theinvestmentcompass@admin.com",
             userType: "ADMIN",
             mobileNo: 8825212001,
             password: bcrypt.hashSync("password", 10)
