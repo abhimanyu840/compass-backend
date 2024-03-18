@@ -8,6 +8,7 @@ const { PORT } = require('./configs/sever.config');
 const paymentRoutes = require('./routes/payment.routes');
 const orderRoutes = require('./routes/order.route')
 const { KEY_ID } = require('./configs/razorpay.config');
+require("dotenv").config();
 
 const app = express();
 
