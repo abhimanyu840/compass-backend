@@ -60,9 +60,10 @@ exports.paymentVerification = async (req, res) => {
             razorpay_signature,
         });
 
-        res.redirect(
-            `${FRONTEND_HOST}/paymentsuccess?reference=${razorpay_payment_id}`
-        );
+        // res.redirect(
+        //     `${FRONTEND_HOST}/paymentsuccess?reference=${razorpay_payment_id}`
+        // );
+
     } else {
         res.status(400).json({
             success: false,
