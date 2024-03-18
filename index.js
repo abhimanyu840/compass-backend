@@ -31,6 +31,6 @@ app.use('/compass/api/v1/orders', orderRoutes);
 app.get('/compass/api/v1/getkey', (req, res) => { res.status(200).json({ key: KEY_ID }) })
 
 // Start the server
-app.listen(PORT || 3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log(`Server is running on port http://localhost:${PORT}`);
 });
