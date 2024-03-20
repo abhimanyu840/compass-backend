@@ -14,7 +14,9 @@ const { DB_NAME, MONGO_URI } = require('./configs/db.config')
 //     return handler(req, res);
 // }
 
-mongoose.connect(MONGO_URI)
+mongoose.connect(process.env.MONGO_URI)
+// mongoose.connect(MONGO_URI)
+// console.log(process.env.MONGO_URI)
 
 const connectToMongo = mongoose.connection
 connectToMongo.on("error", () => {
