@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const user_model = require('./models/user.model')
 const bcrypt = require('bcryptjs')
-const { DB_NAME, MONGO_URI } = require('./configs/db.config')
+// const { DB_NAME, MONGO_URI } = require('./configs/db.config')
 
 // const connectToMongo = handler => async (req, res) => {
 //     if (mongoose.connections[0].readyState) {
